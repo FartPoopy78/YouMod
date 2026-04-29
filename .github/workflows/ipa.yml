@@ -282,12 +282,6 @@ jobs:
 
       - name: Clone YTAnotherMiniplayer
         run: git clone --quiet --depth=1 https://github.com/PoomSmart/YTAnotherMiniplayer.git
-
-      - name: Build YTFlags
-        run: |
-          cd YTFlags
-          make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-          mv packages/*.deb ${{ github.workspace }}/ytflags.deb
         
       - name: Build YouPiP
         if: ${{ inputs.youpip }}
